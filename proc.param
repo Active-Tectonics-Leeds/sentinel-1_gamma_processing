@@ -1,0 +1,53 @@
+# List of Parameters used in sentinel_gamma_proc.tcsh
+# Place in top level directory of processing 
+# John Elliott: 30/10/2018 
+
+# GAMMA Version
+gammaver        20181130                        # Gamma version used for porcessing gamma/20181130 20180704 20171201
+
+# SLC Processing
+lksrng 		20				# Number of Looks in Range (2.3 m slant range per pixel)
+lksazi 		4 				# Number of Looks in Range (14 m azimuth per pixel) 
+substart 	1 				# Which subswath to start including processing with (1 to 3)
+subend 		3 				# Which subswath to end processing with (1 to 3)
+extractburst    0				# Whether to extract subset of bursts from master ( 1 or 0), Need to make burstlist.txt 2 column (start to finish #), three line (IW1-3) of the master
+
+# Interferograms
+nifgms          1                               # Number of interferograms to make with N nearest slave rslcs 
+nfilt		1				# Number of adaptive spectral filtering interations (1-3) 
+
+#DEM
+demname 	srtm_40WE50_35SN42_3sec_4byte   # DEM 
+demlat 		2 				# Oversampling factor of DEM in latitude
+demlon 		2 				# Oversampling factor of DEM in longitude
+
+# Unwrapping
+r_patch 	1				# Number of range patches to break ifgm up into
+az_patch 	1				# Number of azimuth patches to break ifgm up into
+r_init 		120 				# Unwrapping seed point range (must not be larger than range samples)
+az_init 	120 				# Unwrapping seed point azimuth (must not be larger than azimuth samples)
+rewrap_int	10				# Unwrapping contour interval (cm)
+
+# Figures 
+raspixavr 	1				# Range Downsample factor for outputting tifs
+raspixavaz 	1				# Azimuth Downsample factor for outputting tifs
+dim             100                             # GMT grid Dimenions in metres
+loslabel        20				# Interval for Kmz Contour Label 
+
+# Offsets
+offproc         0				# Whether to process offsets (1 or 0)
+lksoffrng	1				# Number of Looks in Range
+lksoffazi	1				# Number of Looks in Azimuth
+rwin 		256				# Window size in Range
+azwin 		64 				# Window size in Azimuth
+rstep 		16				# Step size in Range 
+azstep 		4 				# Step size in Azimuth
+offres 		0.00083333			# Resolution of gmt grd file output (Degrees)
+rfilt 		0.1				# Median Filter Width Range (km)
+afilt 		0.1				# Median Filter Width Azimuth (km)
+rlim 		2 				# Range Bounds (m)
+alim 		2				# Azimuth Bounds (m)
+rcptlim 	1				# Colour Palette Limits Range (m)
+acptlim 	1				# Colour Palette Limits Azimuth (m)
+labelint 	1				# Scale Bar Label Interval (m)
+
